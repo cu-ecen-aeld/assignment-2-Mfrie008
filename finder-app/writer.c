@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 	if(argc != 3)
 	{
 		syslog(LOG_ERR, "Error: number of arguments incorrect");
-		return -1;
+		return 1;
 	}
 
 	// open and write file
@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 	if(strLen != numWritten)
 	{
 		syslog(LOG_ERR, "Did not write the expected number of characters");
-		return -1;
+		return 1;
 	}
 
 	return 0;
